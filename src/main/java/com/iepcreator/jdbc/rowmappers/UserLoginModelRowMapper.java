@@ -15,7 +15,8 @@ public class UserLoginModelRowMapper implements RowMapper<UserLoginModel> {
 		
 		model.setUserId(rset.getInt(1));
 		model.setEmail(rset.getString(2));
-		model.setUserType(rset.getInt(3));
+		model.setName(rset.getString(3));
+		model.setSurname(rset.getString(4));
 		
 		return model;
 	}

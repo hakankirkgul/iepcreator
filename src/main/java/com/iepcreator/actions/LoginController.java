@@ -19,10 +19,14 @@ public class LoginController extends BaseController{
 		String email = request.getParameter("email");
 		String password = request.getParameter("password");
 		
-		UserLoginModel user = userManagerService.checkUser(email, password);
-		if(user != null){
-			request.getSession().setAttribute("LOGGEDIN_USER", user);
-			mv.setViewName("/index");
+		if(email != null && !email.isEmpty() && password != null && !password.isEmpty()){
+			UserLoginModel user = userManagerService.checkUser(email, password);
+			if(user != null){
+				request.getSession().setAttribute("LOGGEDIN_USER", user);
+				mv.setViewName("/index");
+			} else {
+				mv.getModelMap().put("error", "error");
+			}
 		}
 		
 		return mv;

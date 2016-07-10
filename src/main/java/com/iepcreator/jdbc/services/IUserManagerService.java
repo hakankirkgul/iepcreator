@@ -6,6 +6,6 @@ public interface IUserManagerService {
 
 	UserLoginModel checkUser(String email, String password);
 
-	void addUser(String email, String password);
+	void registerUser(String email, String password, String name, String surname);
 	
 }

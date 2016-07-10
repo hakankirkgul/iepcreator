@@ -4,7 +4,8 @@ public class UserLoginModel {
 
 	private int userId;
 	private String email;
-	private int userType;
+	private String name;
+	private String surname;
 	
 	public int getUserId() {
 		return userId;
@@ -18,10 +19,16 @@ public class UserLoginModel {
 	public void setEmail(String email) {
 		this.email = email;
 	}
-	public int getUserType() {
-		return userType;
+	public String getName() {
+		return name;
 	}
-	public void setUserType(int userType) {
-		this.userType = userType;
+	public void setName(String name) {
+		this.name = name;
+	}
+	public String getSurname() {
+		return surname;
+	}
+	public void setSurname(String surname) {
+		this.surname = surname;
 	}
 }

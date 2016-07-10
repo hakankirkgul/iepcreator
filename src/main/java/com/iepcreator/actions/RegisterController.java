@@ -3,6 +3,7 @@ package com.iepcreator.actions;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.springframework.dao.DuplicateKeyException;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.iepcreator.jdbc.services.IUserManagerService;
@@ -17,10 +18,16 @@ public class RegisterController extends BaseController {
 		
 		String email = request.getParameter("email");
 		String password = request.getParameter("password");
+		String name = request.getParameter("name");
+		String surname = request.getParameter("surname");
 		
-		if(email != null && !email.isEmpty() && password != null && !password.isEmpty()){
-			userManagerService.addUser(email, password);
-			mv.getModelMap().put("success", true);
+		if(email != null && !email.isEmpty() && password != null && !password.isEmpty() && name != null && !name.isEmpty() && surname != null && !surname.isEmpty()){
+			try {
+				userManagerService.registerUser(email, password, name, surname);
+				mv.getModelMap().put("success", true);
+			} catch (DuplicateKeyException e) {
+				mv.getModelMap().put("error", "This email address has been taken by another user.");
+			}
 		}
 		
 		return mv;

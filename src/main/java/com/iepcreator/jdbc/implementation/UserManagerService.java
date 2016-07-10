@@ -14,13 +14,13 @@ import com.iepcreator.models.UserLoginModel;
 public class UserManagerService implements InitializingBean, IUserManagerService {
 
 	private ProcedureDefinition proccheckUser;
-	private ProcedureDefinition procaddUser;
+	private ProcedureDefinition procregisterUser;
 	private DataSource dataSource;
 	
 	@Override
 	public void afterPropertiesSet() throws Exception {
 		proccheckUser = new ProcedureDefinition(getDataSource(), "CHECK_USER", new UserLoginModelRowMapper(),Types.VARCHAR,Types.VARCHAR);
-		procaddUser = new ProcedureDefinition(getDataSource(), "ADD_USER", false, Types.VARCHAR, Types.VARCHAR, Types.NUMERIC);
+		procregisterUser = new ProcedureDefinition(getDataSource(), "REGISTER_USER", false, Types.VARCHAR, Types.VARCHAR, Types.VARCHAR, Types.VARCHAR);
 	}
 	
 	@SuppressWarnings("unchecked")
@@ -31,8 +31,8 @@ public class UserManagerService implements InitializingBean, IUserManagerService
 	}
 
 	@Override
-	public void addUser(String email, String password) {
-		procaddUser.executeProcedureNoReturn(email,password);
+	public void registerUser(String email, String password, String name, String surname) {
+		procregisterUser.executeProcedureNoReturn(email,password,name,surname);
 	}
 
 	public DataSource getDataSource() {
