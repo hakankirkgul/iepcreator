@@ -59,8 +59,8 @@
           						<td><input type="text" class="form-control" id="name${student.studentId}" value="${student.name}"/></td>
           						<td><input type="text" class="form-control" id="surname${student.studentId}" value="${student.surname}"/></td>
           						<td><input type="text" class="form-control datepicker" id="birthDate${student.studentId}" value='<fmt:formatDate value="${student.birthDate}" pattern="dd.MM.yyyy"/>'/></td>
-          						<td><input type="text" class="form-control" id="parentName${student.studentId}" value="${student.name}"/></td>
-          						<td><input type="text" class="form-control" id="parentSurname${student.studentId}" value="${student.name}"/></td>
+          						<td><input type="text" class="form-control" id="parentName${student.studentId}" value="${student.parentName}"/></td>
+          						<td><input type="text" class="form-control" id="parentSurname${student.studentId}" value="${student.parentSurname}"/></td>
           						<td>
           							<button class="btn btn-success btn-xs updateStudent" data-id="${student.studentId}"><i class="fa fa-check"></i></button>
                                     <button class="btn btn-danger btn-xs deleteStudent" data-id="${student.studentId}"><i class="fa fa-trash-o "></i></button>
