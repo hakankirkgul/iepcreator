@@ -24,6 +24,14 @@
                      <span>Register</span>
                  </a>
              </li>
+             <c:if test="${not empty sessionScope.LOGGEDIN_USER}">
+	             <li class="sub-menu">
+	                 <a href="/students" <c:if test="${currentPage == \"students\"}">class="active"</c:if>>
+	                     <i class="fa"></i>
+	                     <span>Students</span>
+	                 </a>
+	             </li>
+             </c:if>
          </ul>
          <!-- sidebar menu end-->
      </div>

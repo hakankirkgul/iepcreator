@@ -1763,9 +1763,9 @@ label {
 	}
 }
 
-#focusedInput {
-	border: 1px solid #ed5565;
-	box-shadow: none;
+.focused {
+	border: 1px solid #ed5565 !important;
+	box-shadow: none !important;
 }
 
 .add-on {

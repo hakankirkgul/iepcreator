@@ -22,6 +22,10 @@
     <bean id="userManagerService" class="com.iepcreator.jdbc.implementation.UserManagerService">
     	<property name="dataSource" ref="dataSource"/>
     </bean>
+    
+    <bean id="studentService" class="com.iepcreator.jdbc.implementation.StudentService">
+    	<property name="dataSource" ref="dataSource"/>
+    </bean>
 
 	<mvc:resources mapping="/js/**" location="/js/" />
 	<mvc:resources mapping="/css/**" location="/css/" />
@@ -73,6 +77,26 @@
 	<bean name="/signup" parent="baseAction" class="com.iepcreator.actions.RegisterController">
 		<property name="pageName" value="signup" />
 		<property name="userManagerService" ref="userManagerService" />
+	</bean>
+	
+	<bean name="/students" parent="baseAction" class="com.iepcreator.actions.StudentsController">
+		<property name="pageName" value="students" />
+		<property name="studentService" ref="studentService" />
+	</bean>
+	
+	<bean name="/students/add" parent="baseAction" class="com.iepcreator.actions.AddStudentController">
+		<property name="pageName" value="jsonResult" />
+		<property name="studentService" ref="studentService" />
+	</bean>
+	
+	<bean name="/students/delete" parent="baseAction" class="com.iepcreator.actions.DeleteStudentController">
+		<property name="pageName" value="jsonResult" />
+		<property name="studentService" ref="studentService" />
+	</bean>
+	
+	<bean name="/students/update" parent="baseAction" class="com.iepcreator.actions.UpdateStudentController">
+		<property name="pageName" value="jsonResult" />
+		<property name="studentService" ref="studentService" />
 	</bean>
 
 </beans>
