@@ -12,7 +12,7 @@ import org.springframework.jdbc.object.StoredProcedure;
 
 public class ProcedureDefinition extends StoredProcedure {
 
-	public ProcedureDefinition(DataSource dataSource, String name, int returnType, int ... inputTypes) {
+	public ProcedureDefinition(DataSource dataSource, String name, int returnType, boolean test, int ... inputTypes) {
 		super(dataSource, name);
 		setFunction(false);
 		declareParameter(new SqlOutParameter("out", returnType));

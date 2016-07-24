@@ -26,6 +26,11 @@
     <bean id="studentService" class="com.iepcreator.jdbc.implementation.StudentService">
     	<property name="dataSource" ref="dataSource"/>
     </bean>
+    
+    <bean id="courseService" class="com.iepcreator.jdbc.implementation.CourseService">
+    	<property name="dataSource" ref="dataSource"/>
+    </bean>
+    
 
 	<mvc:resources mapping="/js/**" location="/js/" />
 	<mvc:resources mapping="/css/**" location="/css/" />
