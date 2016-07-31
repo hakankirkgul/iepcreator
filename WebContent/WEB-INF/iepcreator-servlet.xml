@@ -129,5 +129,16 @@
 		<property name="pageName" value="jsonResult" />
 		<property name="courseService" ref="courseService" />
 	</bean>
+	
+	<bean name="/review" parent="baseAction" class="com.iepcreator.actions.StudentReviewController">
+		<property name="pageName" value="review" />
+		<property name="studentService" ref="studentService" />
+		<property name="courseService" ref="courseService" />
+	</bean>
+	
+	<bean name="/review/set" parent="baseAction" class="com.iepcreator.actions.SetGoalCompletedController">
+		<property name="pageName" value="jsonResult" />
+		<property name="courseService" ref="courseService" />
+	</bean>
 
 </beans>

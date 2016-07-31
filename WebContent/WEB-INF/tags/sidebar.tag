@@ -37,6 +37,12 @@
 	                     <span>Settings</span>
 	                 </a>
 	             </li>
+	             <li class="sub-menu">
+	                 <a href="/review" <c:if test="${currentPage == \"review\"}">class="active"</c:if>>
+	                     <i class="fa"></i>
+	                     <span>Review</span>
+	                 </a>
+	             </li>
              </c:if>
          </ul>
          <!-- sidebar menu end-->

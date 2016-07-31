@@ -17,7 +17,7 @@ public class GoalModelRowMapper implements RowMapper<GoalModel> {
 		model.setSubject(rset.getString(2));
 		model.setSubjectNo(rset.getInt(3));
 		model.setGoalId(rset.getInt(4));
-		model.setGoal(rset.getString(4));
+		model.setGoal(rset.getString(5));
 		model.setGoalNo(rset.getInt(6));
 		
 		return model;

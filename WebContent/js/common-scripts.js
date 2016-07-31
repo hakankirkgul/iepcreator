@@ -1,4 +1,4 @@
-/*---LEFT BAR ACCORDION----*/
+/*---LEFT BAR ACCORDION dsfgsfdgsf----*/
 $(function() {
     $('#nav-accordion').dcAccordion({
         eventType: 'click',
@@ -11,12 +11,8 @@ $(function() {
 //        cookie: 'dcjq-accordion-1',
         classExpand: 'dcjq-current-parent'
     });
-});
-
-var Script = function () {
-
-
-//    sidebar dropdown menu auto scrolling
+    
+//  sidebar dropdown menu auto scrolling
 
     jQuery('#sidebar .sub-menu > a').click(function () {
         var o = ($(this).offset());
@@ -71,9 +67,9 @@ var Script = function () {
     });
 
 // custom scrollbar
-    $("#sidebar").niceScroll({styler:"fb",cursorcolor:"#4ECDC4", cursorwidth: '3', cursorborderradius: '10px', background: '#404040', spacebarenabled:false, cursorborder: ''});
+    //$("#sidebar").niceScroll({styler:"fb",cursorcolor:"#4ECDC4", cursorwidth: '3', cursorborderradius: '10px', background: '#404040', spacebarenabled:false, cursorborder: ''});
 
-    $("html").niceScroll({styler:"fb",cursorcolor:"#4ECDC4", cursorwidth: '6', cursorborderradius: '10px', background: '#404040', spacebarenabled:false,  cursorborder: '', zindex: '1000'});
+    //$("html").niceScroll({styler:"fb",cursorcolor:"#4ECDC4", cursorwidth: '6', cursorborderradius: '10px', background: '#404040', spacebarenabled:false,  cursorborder: '', zindex: '1000'});
 
 // widget tools
 
@@ -96,6 +92,4 @@ var Script = function () {
 //    tool tips
 
     $('.tooltips').tooltip();
-
-
-}();
+});

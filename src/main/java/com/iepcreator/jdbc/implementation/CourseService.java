@@ -39,7 +39,7 @@ public class CourseService implements InitializingBean, ICourseService {
 		procgetCourses = new ProcedureDefinition(getDataSource(), "GET_COURSES", new CourseModelRowMapper());
 		procupdateGoalStatus = new ProcedureDefinition(getDataSource(), "UPDATE_GOAL_STATUS", false, Types.NUMERIC, Types.NUMERIC, Types.NUMERIC);
 		procgetGoals = new ProcedureDefinition(getDataSource(), "GET_GOALS", new GoalModelRowMapper(), Types.NUMERIC);
-		procgetGoalStatuses = new ProcedureDefinition(getDataSource(), "GET_GOALS_STATUSES", new GoalStatusModelRowMapper(), Types.NUMERIC, Types.NUMERIC);
+		procgetGoalStatuses = new ProcedureDefinition(getDataSource(), "GET_GOAL_STATUSES", new GoalStatusModelRowMapper(), Types.NUMERIC, Types.NUMERIC);
 		procgetRules = new ProcedureDefinition(getDataSource(), "GET_RULES", new RuleModelRowMapper(), Types.NUMERIC, Types.NUMERIC);
 		procgetGoalCountPerSubject = new ProcedureDefinition(getDataSource(), "GET_GOAL_COUNT_PER_SUBJECT", Types.NUMERIC, true, Types.NUMERIC, Types.NUMERIC);
 		procupdateGoalCountPerSubject = new ProcedureDefinition(getDataSource(), "UPDATE_GOAL_COUNT_PER_SUBJECT", false, Types.NUMERIC, Types.NUMERIC, Types.NUMERIC);
