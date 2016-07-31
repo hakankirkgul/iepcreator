@@ -103,5 +103,31 @@
 		<property name="pageName" value="jsonResult" />
 		<property name="studentService" ref="studentService" />
 	</bean>
+	
+	<bean name="/settings" parent="baseAction" class="com.iepcreator.actions.SettingsController">
+		<property name="pageName" value="settings" />
+		<property name="studentService" ref="studentService" />
+		<property name="courseService" ref="courseService" />
+	</bean>
+	
+	<bean name="/rules" parent="baseAction" class="com.iepcreator.actions.RulesController">
+		<property name="pageName" value="rules" />
+		<property name="courseService" ref="courseService" />
+	</bean>
+	
+	<bean name="/rules/setGoalCountPerSubject" parent="baseAction" class="com.iepcreator.actions.SetGoalCountPerSubjectController">
+		<property name="pageName" value="jsonResult" />
+		<property name="courseService" ref="courseService" />
+	</bean>
+	
+	<bean name="/rules/add" parent="baseAction" class="com.iepcreator.actions.AddRuleController">
+		<property name="pageName" value="jsonResult" />
+		<property name="courseService" ref="courseService" />
+	</bean>
+	
+	<bean name="/rules/delete" parent="baseAction" class="com.iepcreator.actions.DeleteRuleController">
+		<property name="pageName" value="jsonResult" />
+		<property name="courseService" ref="courseService" />
+	</bean>
 
 </beans>

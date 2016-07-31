@@ -12,11 +12,13 @@ import com.iepcreator.jdbc.rowmappers.CourseModelRowMapper;
 import com.iepcreator.jdbc.rowmappers.GoalModelRowMapper;
 import com.iepcreator.jdbc.rowmappers.GoalStatusModelRowMapper;
 import com.iepcreator.jdbc.rowmappers.RuleModelRowMapper;
+import com.iepcreator.jdbc.rowmappers.SubjectModelRowMapper;
 import com.iepcreator.jdbc.services.ICourseService;
 import com.iepcreator.models.CourseModel;
 import com.iepcreator.models.GoalModel;
 import com.iepcreator.models.GoalStatusModel;
 import com.iepcreator.models.RuleModel;
+import com.iepcreator.models.SubjectModel;
 
 public class CourseService implements InitializingBean, ICourseService {
 	
@@ -29,6 +31,7 @@ public class CourseService implements InitializingBean, ICourseService {
 	private ProcedureDefinition procupdateGoalCountPerSubject;
 	private ProcedureDefinition procaddRule;
 	private ProcedureDefinition procdelRule;
+	private ProcedureDefinition procgetSubjects;
 	private DataSource dataSource;
 
 	@Override
@@ -42,6 +45,7 @@ public class CourseService implements InitializingBean, ICourseService {
 		procupdateGoalCountPerSubject = new ProcedureDefinition(getDataSource(), "UPDATE_GOAL_COUNT_PER_SUBJECT", false, Types.NUMERIC, Types.NUMERIC, Types.NUMERIC);
 		procaddRule = new ProcedureDefinition(getDataSource(), "ADD_RULE", false, Types.NUMERIC, Types.NUMERIC, Types.NUMERIC);
 		procdelRule = new ProcedureDefinition(getDataSource(), "DELETE_RULE", false, Types.NUMERIC);
+		procgetSubjects = new ProcedureDefinition(getDataSource(), "GET_SUBJECTS", new SubjectModelRowMapper(), Types.NUMERIC);
 	}
 
 	@Override
@@ -92,6 +96,13 @@ public class CourseService implements InitializingBean, ICourseService {
 	public void deleteRule(int ruleId) {
 		procdelRule.executeProcedureNoReturn(ruleId);
 	}
+
+	@Override
+	public List<SubjectModel> getSubjects(int courseId) {
+		List<SubjectModel> list = (List<SubjectModel>)procgetSubjects.executeProcedure(courseId);
+		return list;
+	}
+
 
 	public DataSource getDataSource() {
 		return dataSource;

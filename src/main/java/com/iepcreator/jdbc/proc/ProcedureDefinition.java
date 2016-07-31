@@ -1,5 +1,6 @@
 package com.iepcreator.jdbc.proc;
 
+import java.math.BigDecimal;
 import java.util.List;
 
 import javax.sql.DataSource;
@@ -15,11 +16,11 @@ public class ProcedureDefinition extends StoredProcedure {
 	public ProcedureDefinition(DataSource dataSource, String name, int returnType, boolean test, int ... inputTypes) {
 		super(dataSource, name);
 		setFunction(false);
-		declareParameter(new SqlOutParameter("out", returnType));
 		int index = 0;
 		for (int paramType : inputTypes) {
 			declareParameter(new SqlParameter("param"+index++,paramType));
 		}
+		declareParameter(new SqlOutParameter("out", returnType));
 	}
 	
 	public ProcedureDefinition(DataSource dataSource, String name, boolean hasReturn, int ... inputTypes) {
@@ -56,7 +57,7 @@ public class ProcedureDefinition extends StoredProcedure {
 		if(result == null){
 			return 0;
 		} else {
-			return (Integer)result;
+			return ((BigDecimal)result).intValue();
 		}
 	}
 	

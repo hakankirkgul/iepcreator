@@ -6,6 +6,7 @@ import com.iepcreator.models.CourseModel;
 import com.iepcreator.models.GoalModel;
 import com.iepcreator.models.GoalStatusModel;
 import com.iepcreator.models.RuleModel;
+import com.iepcreator.models.SubjectModel;
 
 public interface ICourseService {
 
@@ -26,5 +27,7 @@ public interface ICourseService {
 	void addRule(int studentId, int subjectId, int preSubjectId);
 	
 	void deleteRule(int ruleId);
+	
+	List<SubjectModel> getSubjects(int courseId);
 	
 }

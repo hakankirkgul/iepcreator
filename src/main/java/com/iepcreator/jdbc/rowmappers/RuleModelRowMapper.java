@@ -15,11 +15,11 @@ public class RuleModelRowMapper implements RowMapper<RuleModel> {
 		
 		model.setRuleId(rset.getInt(1));
 		model.setSubjectId(rset.getInt(2));
-		model.setSubject(rset.getString(3));
-		model.setSubjectNo(rset.getInt(4));
+		model.setSubjectNo(rset.getInt(3));
+		model.setSubject(rset.getString(4));
 		model.setPreSubjectId(rset.getInt(5));
-		model.setPreSubject(rset.getString(6));
-		model.setPreSubjectNo(rset.getInt(7));
+		model.setPreSubjectNo(rset.getInt(6));
+		model.setPreSubject(rset.getString(7));
 		
 		return model;
 	}

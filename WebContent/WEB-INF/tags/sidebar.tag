@@ -31,6 +31,12 @@
 	                     <span>Students</span>
 	                 </a>
 	             </li>
+	             <li class="sub-menu">
+	                 <a href="/settings" <c:if test="${currentPage == \"settings\"}">class="active"</c:if>>
+	                     <i class="fa"></i>
+	                     <span>Settings</span>
+	                 </a>
+	             </li>
              </c:if>
          </ul>
          <!-- sidebar menu end-->
