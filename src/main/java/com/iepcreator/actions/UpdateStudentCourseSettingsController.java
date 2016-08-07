@@ -7,7 +7,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.iepcreator.jdbc.services.ICourseService;
 
-public class SetGoalCountPerSubjectController extends BaseController {
+public class UpdateStudentCourseSettingsController extends BaseController {
 	
 	private ICourseService courseService;
 
@@ -21,12 +21,15 @@ public class SetGoalCountPerSubjectController extends BaseController {
 		String courseIdTxt = request.getParameter("courseId");
 		int courseId = courseIdTxt == null || courseIdTxt.isEmpty() ? 0 : Integer.parseInt(courseIdTxt);
 		
-		String countTxt = request.getParameter("count");
-		int count = countTxt == null || countTxt.isEmpty() ? 0 : Integer.parseInt(countTxt);
+		String goalPerSubjectTxt = request.getParameter("goalPerSubject");
+		int goalPerSubject = goalPerSubjectTxt == null || goalPerSubjectTxt.isEmpty() ? 0 : Integer.parseInt(goalPerSubjectTxt);
 		
-		if(studentId > 0 && courseId > 0 && count > 0){
+		String subjectPerPlanTxt = request.getParameter("subjectPerPlan");
+		int subjectPerPlan = subjectPerPlanTxt == null || subjectPerPlanTxt.isEmpty() ? 0 : Integer.parseInt(subjectPerPlanTxt);
+		
+		if(studentId > 0 && courseId > 0 && goalPerSubject > 0 && subjectPerPlan > 0){
 			try {
-				courseService.updateGoalCountPerSubject(studentId,courseId,count);
+				courseService.updateStudentCourseSettings(studentId, courseId, goalPerSubject, subjectPerPlan);
 				mv.getModelMap().put("success", "success");
 			} catch (Exception e) {
 				mv.getModelMap().put("error", "System Error");

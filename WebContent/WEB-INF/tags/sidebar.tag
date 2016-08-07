@@ -43,6 +43,12 @@
 	                     <span>Review</span>
 	                 </a>
 	             </li>
+	             <li class="sub-menu">
+	                 <a href="/plan" <c:if test="${currentPage == \"plan\"}">class="active"</c:if>>
+	                     <i class="fa"></i>
+	                     <span>Create Plan</span>
+	                 </a>
+	             </li>
              </c:if>
          </ul>
          <!-- sidebar menu end-->

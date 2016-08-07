@@ -23,6 +23,13 @@
           	<h3><i class="fa fa-angle-right"></i> Home</h3>
           	<div class="row mt">
           		<div class="col-lg-12">
+          			<h4>Welcome to IEP(Individualized Education Plan) Creator.</h4>
+          			<p>You can create IEP's for your students easily with the steps below.</p>
+          			<p>1. <a href="/signup">Register</a> and <a href="/login">login</a>.</p>
+          			<p>2. Enter your students' info from <a href="/students">students</a> page.</p>
+          			<p>3. <a href="/review">Review</a> your students.</p>
+          			<p>4. Enter your students iep <a href="/settings">settings</a> for courses.</p>
+          			<p>5. <a href="/plan">Create Plan</a>.</p>
           		</div>
           	</div>
 			

@@ -9,6 +9,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.iepcreator.jdbc.services.ICourseService;
 import com.iepcreator.models.RuleModel;
+import com.iepcreator.models.StudentCourseSettingsModel;
 import com.iepcreator.models.SubjectModel;
 
 public class RulesController extends BaseController {
@@ -29,8 +30,8 @@ public class RulesController extends BaseController {
 			List<SubjectModel> subjects = courseService.getSubjects(courseId);
 			mv.getModelMap().put("subjects",subjects);
 			
-			int goalCountPerSubject = courseService.getGoalCountPerSubject(studentId, courseId);
-			mv.getModelMap().put("goalCountPerSubject", goalCountPerSubject);
+			StudentCourseSettingsModel settings = courseService.getStudentCourseSettings(studentId, courseId);
+			mv.getModelMap().put("settings", settings);
 			
 			List<RuleModel> rules = courseService.getRules(courseId, studentId);
 			mv.getModelMap().put("rules", rules);

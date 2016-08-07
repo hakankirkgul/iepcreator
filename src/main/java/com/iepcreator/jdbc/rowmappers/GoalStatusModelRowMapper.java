@@ -13,8 +13,8 @@ public class GoalStatusModelRowMapper implements RowMapper<GoalStatusModel> {
 	public GoalStatusModel mapRow(ResultSet rset, int rowNo) throws SQLException {
 		GoalStatusModel model = new GoalStatusModel();
 
-		model.setGoalId(rset.getInt(1));
-		model.setSubjectId(rset.getInt(2));
+		model.setSubjectId(rset.getInt(1));
+		model.setGoalId(rset.getInt(2));
 		model.setStatus(rset.getInt(3));
 		
 		return model;

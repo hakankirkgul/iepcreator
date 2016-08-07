@@ -61,7 +61,7 @@
     <script src="/js/jq/jquery.scrollTo.min.js"></script>
     <script src="/js/jq/jquery.nicescroll.js" type="text/javascript"></script>
     <script src="/js/common-scripts.js"></script>
-    <script src="/js/settings.js"></script>
+    <script src="/js/settings.js?ver=2.0"></script>
 
   </body>
 </html>

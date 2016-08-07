@@ -115,7 +115,7 @@
 		<property name="courseService" ref="courseService" />
 	</bean>
 	
-	<bean name="/rules/setGoalCountPerSubject" parent="baseAction" class="com.iepcreator.actions.SetGoalCountPerSubjectController">
+	<bean name="/rules/update/student/course/settings" parent="baseAction" class="com.iepcreator.actions.UpdateStudentCourseSettingsController">
 		<property name="pageName" value="jsonResult" />
 		<property name="courseService" ref="courseService" />
 	</bean>
@@ -138,6 +138,12 @@
 	
 	<bean name="/review/set" parent="baseAction" class="com.iepcreator.actions.SetGoalCompletedController">
 		<property name="pageName" value="jsonResult" />
+		<property name="courseService" ref="courseService" />
+	</bean>
+	
+	<bean name="/plan" parent="baseAction" class="com.iepcreator.actions.CreatePlanController">
+		<property name="pageName" value="plan" />
+		<property name="studentService" ref="studentService" />
 		<property name="courseService" ref="courseService" />
 	</bean>
 

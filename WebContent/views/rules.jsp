@@ -4,9 +4,13 @@
 <form id="settingsForm" class="form-inline" method="post">
     <div class="form-group">
         <label>Goal Count per Subject</label><br />
-        <input id="goalCountPerSubject" class="form-control" value="${goalCountPerSubject}"/>
+        <input id="goalCountPerSubject" class="form-control" value="${settings.goalPerSubject}"/>
     </div>
-    <button type="button" class="btn btn-theme" id="setGoalCountPerSubject" style="vertical-align: bottom;">Save</button>
+    <div class="form-group">
+        <label>Subject Count per Plan</label><br />
+        <input id="subjectCountPerPlan" class="form-control" value="${settings.subjectPerPlan}"/>
+    </div>
+    <button type="button" class="btn btn-theme" id="updateStudentCourseSettings" style="vertical-align: bottom;">Save</button>
 </form>
 
 <table class="table table-striped table-advance table-hover">

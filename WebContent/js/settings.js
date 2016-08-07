@@ -8,14 +8,15 @@ $(document).ready(function(){
 		}
 	});
 	
-	$('#rules').on('click','#setGoalCountPerSubject',function(){
+	$('#rules').on('click','#updateStudentCourseSettings',function(){
 		$.ajax({
 			type : 'post',
-			url : '/rules/setGoalCountPerSubject',
+			url : '/rules/update/student/course/settings',
 			data : {
 				studentId : $('#studentId').val(),
 				courseId : $('#courseId').val(),
-				count : $('#goalCountPerSubject').val()
+				goalPerSubject : $('#goalCountPerSubject').val(),
+				subjectPerPlan : $('#subjectCountPerPlan').val()
 			}
 		}).done(function(data){
 			if(data != 'OK'){
