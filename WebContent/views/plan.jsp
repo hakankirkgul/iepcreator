@@ -42,7 +42,7 @@
           							</c:forEach>
           						</select>
                           </div>
-                          <button id="btnCreatePlan" type="submit" class="btn btn-theme" style="vertical-align: bottom;">Show</button>
+                          <button id="btnCreatePlan" type="submit" class="btn btn-theme" style="vertical-align: bottom;">Create Plan</button>
                       </form>
                       
                       <c:if test="${not empty finishedGoals}">
